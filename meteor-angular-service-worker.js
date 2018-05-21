@@ -24,9 +24,9 @@ Meteor.ServiceWorker = {
 				const value = configs[key];
 				// assign value to default config
 				if (key === 'enable') {
-					_enable = value;
+					_enable = !!value;
 				} else if (key === 'cachePattern') {
-					_cachePattern = value;
+					_cachePattern = [ ..._cachePattern, ...value ];
 				} else if (key === 'skipFiles') {
 					_skipFiles = [ ..._skipFiles, ...value ];
 				} else {
