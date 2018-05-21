@@ -4,7 +4,7 @@ Package.describe({
 	// Brief, one-line summary of the package.
 	summary: 'Integrate angular service worker into meteor',
 	// URL to the Git repository containing the source code for this package.
-	git: 'https://gitlab.com/ymchun/meteor-angular-service-worker',
+	git: 'https://github.com/ymchun/meteor-angular-service-worker',
 	// By default, Meteor will default to using README.md for documentation.
 	// To avoid submitting documentation, set this field to null.
 	documentation: 'README.md'
