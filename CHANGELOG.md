@@ -1,3 +1,9 @@
+## 1.2.1 (2018-06-08)
+
+### Dependency updates
+
+* This pacakge now depends on @angular/service-worker 6.0.4
+
 ## 1.2.0 (2018-05-27)
 
 ### Dependency updates
