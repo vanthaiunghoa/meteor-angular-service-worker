@@ -8,7 +8,8 @@ export const name = 'meteor-angular-service-worker';
 
 // configurations
 let _enable = true;
-let _cachePattern = [];
+let _appCachePattern = [];
+let _assetCachePattern = [];
 let _skipFiles = [
 	'robots.txt',
 	'manifest.json',
@@ -25,8 +26,10 @@ Meteor.ServiceWorker = {
 				// assign value to default config
 				if (key === 'enable') {
 					_enable = !!value;
-				} else if (key === 'cachePattern') {
-					_cachePattern = [ ..._cachePattern, ...value ];
+				} else if (key === 'appCachePattern') {
+					_appCachePattern = [ ..._appCachePattern, ...value ];
+				} else if (key === 'assetCachePattern') {
+					_assetCachePattern = [ ..._assetCachePattern, ...value ];
 				} else if (key === 'skipFiles') {
 					_skipFiles = [ ..._skipFiles, ...value ];
 				} else {
@@ -98,14 +101,14 @@ WebApp.connectHandlers.use(
 					installMode: 'prefetch',
 					updateMode: 'prefetch',
 					urls: [],
-					patterns: _cachePattern,
+					patterns: _appCachePattern,
 				},
 				{
 					name: 'assets',
 					installMode: 'lazy',
 					updateMode: 'prefetch',
 					urls: [],
-					patterns: _cachePattern,
+					patterns: _assetCachePattern,
 				},
 			],
 			dataGroups: [],
@@ -121,10 +124,13 @@ WebApp.connectHandlers.use(
 					if (!RegExp(`(${_skipFiles.join("|").split(".").join("\\.")})`, 'g').test(resource.url)) {
 						// check assets or app scripts
 						if (RegExp('(favicon\.ico|\.html|\.css|\.js)', 'g').test(resource.url)) {
+							// app scripts
 							ngsw.assetGroups[0].urls.push(resource.url);
 						} else {
+							// asset files
 							ngsw.assetGroups[1].urls.push(resource.url);
 						}
+						// hash table
 						ngsw.hashTable[resource.url] = resource.hash;
 					}
 				}

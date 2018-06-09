@@ -46,13 +46,19 @@ declare module 'meteor/meteor' {
 if (Meteor.isServer) {
 	// set up service worker only on production
 	Meteor.ServiceWorker.config({
-		enable: Meteor.isProduction, // boolean, enable/disable service worker
-		cachePattern: [], // string array
-		skipFiles: [], // string array
+		// config goes here
 	});
 	// do other things...
 }
 ```
+
+### Supported config keys
+Key               | Type     |
+------------------|----------|
+enable            | boolean  |
+appCachePattern   | string[] |
+assetCachePattern | string[] |
+skipFiles         | string[] |
 
 ## License
 This package is MIT Licensed
