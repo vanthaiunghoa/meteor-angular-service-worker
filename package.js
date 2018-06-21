@@ -1,6 +1,6 @@
 Package.describe({
 	name: 'ymchun:meteor-angular-service-worker',
-	version: '1.3.1',
+	version: '1.3.2',
 	// Brief, one-line summary of the package.
 	summary: 'Integrate angular service worker into meteor',
 	// URL to the Git repository containing the source code for this package.
@@ -11,7 +11,7 @@ Package.describe({
 });
 
 Npm.depends({
-	'@angular/service-worker': '6.0.5',
+	'@angular/service-worker': '6.0.6',
 });
 
 Package.onUse(function(api) {
