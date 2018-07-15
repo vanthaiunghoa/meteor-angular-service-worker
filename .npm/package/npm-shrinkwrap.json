@@ -2,9 +2,9 @@
   "lockfileVersion": 1,
   "dependencies": {
     "@angular/service-worker": {
-      "version": "6.0.7",
-      "resolved": "https://registry.npmjs.org/@angular/service-worker/-/service-worker-6.0.7.tgz",
-      "integrity": "sha512-VO/u69uJ/TY0qlB92k6CiP8vPM/UvHztKxXWxnDn2WcrTViZcAUkRgMcf0aiBUdFlIfMyOn0bgqKFzrO4b7uzw=="
+      "version": "6.0.9",
+      "resolved": "https://registry.npmjs.org/@angular/service-worker/-/service-worker-6.0.9.tgz",
+      "integrity": "sha512-MrwKBGGG7btGjuM2Bm7CmsiNtyOfzx67Xb9V9rB+LSM3wZXRLbcX9urtnPjGTYXDZtZ/IdUuTT0u2BtuJLgv5Q=="
     },
     "tslib": {
       "version": "1.9.3",
